@@ -1,12 +1,14 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
-    const text = ["Front-End Developer", "Passionate Coder", "Web Designer"];
+    const text = ["Front-End Developer", "I am Er. Nischal Nepal", "I am a Developer"];
     let index = 0;
     let charIndex = 0;
     let typingText = document.querySelector(".typing-text");
 
     function type() {
         if (charIndex < text[index].length) {
-            typingText.innerHTML += text[index].charAt(charIndex);
+            typingText.textContent += text[index].charAt(charIndex);
             charIndex++;
             setTimeout(type, 100);
         } else {
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function erase() {
         if (charIndex > 0) {
-            typingText.innerHTML = text[index].substring(0, charIndex - 1);
+            typingText.textContent = text[index].substring(0, charIndex - 1);
             charIndex--;
             setTimeout(erase, 50);
         } else {
@@ -25,5 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Initially clear the content to avoid issues
+    typingText.textContent = "";
     type();
 });
