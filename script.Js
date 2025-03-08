@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Initially clear the content to avoid issues
+    
     typingText.textContent = "";
     type();
 });
